@@ -1,5 +1,13 @@
-# giantmusictransformer
-## Giant Music Transformer as PyPi package
+# Giant Music Transformer PyPi
+## Giant Music Transformer as a PyPi package
+
+***
+
+## Install
+
+```sh
+pip install giantmusictransformer
+```
 
 ***
 
