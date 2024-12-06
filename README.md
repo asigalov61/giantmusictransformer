@@ -1,4 +1,4 @@
-# Giant Music Transformer PyPi
+# Giant Music Transformer
 ## Giant Music Transformer as a PyPi package
 
 ***
