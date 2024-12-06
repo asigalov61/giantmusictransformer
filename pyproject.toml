@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=74.1.2", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "giantmusictransformer"
+version = "24.9.8"
+description = "Fast multi-instrumental music transformer with true full MIDI instruments range, efficient encoding, octo-velocity and outro tokens"
+authors = [
+    {name = "Alex Lev", email = "alexlev61@proton.me"}
+]
+maintainers = [
+  {name = "Alex Lev", email = "alexlev61@proton.me"}
+]
+dependencies = [
+    "tqdm",
+    "matplotlib",
+    "torch",
+    "einops",
+    "torch-summary",
+]
+keywords = ["MIDI", "music", "music ai", "music transformer"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",  
+    "Operating System :: OS Independent",        
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12"
+]
+requires-python = ">=3.6"
+license = { text = "Apache Software License 2.0" }
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.urls]
+Homepage = "https://github.com/asigalov61/giantmusictransformer"
+Examples = "https://github.com/asigalov61/tegridymidi/giantmusictransformer/examples"
+Documentation = "https://github.com/asigalov61/giantmusictransformer/docs"
+Repository = "https://github.com/asigalov61/giantmusictransformer"
+Issues = "https://github.com/asigalov61/giantmusictransformer/issues"
+Discussions = "https://github.com/asigalov61/giantmusictransformer/discussions"
