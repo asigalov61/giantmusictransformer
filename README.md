@@ -1,5 +1,5 @@
 # Giant Music Transformer
-## Giant Music Transformer as a PyPi package
+## [Giant Music Transformer](https://github.com/asigalov61/Giant-Music-Transformer) as a PyPi package
 
 ***
 
