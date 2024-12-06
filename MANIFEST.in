@@ -1,3 +1,4 @@
 include README.md
+recursive-include giantmusictransformer/ *
 recursive-include giantmusictransformer/seed_midis *
 recursive-include giantmusictransformer/examples *

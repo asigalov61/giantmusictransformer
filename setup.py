@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import os
 
 # Install fluidsynth using apt
-os.system('apt-get update && apt-get install -y fluidsynth')
+# os.system('apt-get update && apt-get install -y fluidsynth')
 
 # Read the contents of your README file
 with open("README.md", "r", encoding="utf-8") as fh:
@@ -10,7 +10,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="giantmusictransformer",
-    version="0.0.1",
+    version="24.12.2",
     description="Fast multi-instrumental music transformer with true full MIDI instruments range, efficient encoding, octo-velocity and outro tokens",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -25,19 +25,13 @@ setup(
         "Source Code": "https://github.com/asigalov61/giantmusictransformer",
         "Official GitHub Repo": "https://github.com/asigalov61/Giant-Music-Transformer",
         "Hugging Face Models Repo": "https://huggingface.co/asigalov61/Giant-Music-Transformer",
+        "Hugging Face Spaces Deom": "https://huggingface.co/spaces/asigalov61/Giant-Music-Transformer"
     },
     packages=find_packages(),
     include_package_data=True,
     package_data={
-        'giantmusictransformer': ['seed_midis/*', 'examples/*'],
+        'giantmusictransformer': ['/', 'seed_midis/', 'examples/'],
     },
-    install_requires=[
-        'tqdm',
-        'matplotlib',
-        'torch',
-        'einops',
-        'torch-summary',
-    ],
     keywords=['MIDI', 'music', 'music ai', 'music transformer'],
     python_requires='>=3.6',
     license='Apache Software License 2.0',

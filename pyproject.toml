@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "giantmusictransformer"
-version = "24.9.8"
+version = "24.12.2"
 description = "Fast multi-instrumental music transformer with true full MIDI instruments range, efficient encoding, octo-velocity and outro tokens"
 authors = [
     {name = "Alex Lev", email = "alexlev61@proton.me"}
@@ -44,6 +44,8 @@ content-type = "text/markdown"
 Homepage = "https://github.com/asigalov61/giantmusictransformer"
 Examples = "https://github.com/asigalov61/tegridymidi/giantmusictransformer/examples"
 Documentation = "https://github.com/asigalov61/giantmusictransformer/docs"
-Repository = "https://github.com/asigalov61/giantmusictransformer"
+Repository = "https://github.com/asigalov61/Giant-Music-Transformer"
 Issues = "https://github.com/asigalov61/giantmusictransformer/issues"
 Discussions = "https://github.com/asigalov61/giantmusictransformer/discussions"
+Models = "https://huggingface.co/asigalov61/Giant-Music-Transformer"
+Demo = "https://huggingface.co/spaces/asigalov61/Giant-Music-Transformer"
