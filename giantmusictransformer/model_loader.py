@@ -14,11 +14,11 @@ os.environ['HF_HUB_ENABLE_HF_TRANSFER'] = '1'
 
 from huggingface_hub import hf_hub_download
 
-from models import *
+from .models import *
 
 import torch
 
-from x_transformer_1_23_2 import TransformerWrapper, AutoregressiveWrapper, Decoder
+from .x_transformer_1_23_2 import TransformerWrapper, AutoregressiveWrapper, Decoder
 
 from torchsummary import summary
 

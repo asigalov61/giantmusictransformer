@@ -7,13 +7,13 @@
 # License: Apache 2.0
 #===================================================================================================
 
-import model_loader
+from . import model_loader
 
-import TMIDIX
+from . import TMIDIX
 
 import torch
 
-from x_transformer_1_23_2 import top_p
+from .x_transformer_1_23_2 import top_p
 
 import random
 
