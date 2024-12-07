@@ -18,8 +18,11 @@ dependencies = [
     "torch",
     "einops",
     "torch-summary",
+    "hf-transfer",
+    "huggingface_hub",
+    "ipywidgets"    
 ]
-keywords = ["MIDI", "music", "music ai", "music transformer"]
+keywords = ["MIDI", "music", "music ai", "music transformer", "artificial instelligence"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Science/Research",
