@@ -160,13 +160,13 @@ class Attend(nn.Module):
         major, minor = device_properties.major, device_properties.minor
 
         if (major, minor) == (8, 0):
-            print_once('A100 GPU detected, using flash attention if input tensor is on cuda')
+            # print_once('A100 GPU detected, using flash attention if input tensor is on cuda')
             self.cuda_config = EfficientAttentionConfig(True, False, False)
         elif (major, minor) == (9, 0):
-            print_once('H100 GPU detected, using flash attention')
+            # print_once('H100 GPU detected, using flash attention')
             self.cuda_config = EfficientAttentionConfig(True, False, False)
         else:
-            print_once('Non-A100 GPU detected, using math or mem efficient attention if input tensor is on cuda')
+            # print_once('Non-A100 GPU detected, using math or mem efficient attention if input tensor is on cuda')
             self.cuda_config = EfficientAttentionConfig(False, True, True)
 
     def flash_attn(
