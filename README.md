@@ -32,10 +32,19 @@ choco install fluidsynth
 ```python
 import giantmusictransformer as gmt
 
+# Load desired Giant Music Transformer model
 model = gmt.load_model('medium')
+
+# Get sample seed MIDI path
 sample_midi_path = gmt.get_sample_midi_files()[6][1]
+
+# Load seed MIDI
 input_tokens = gmt.midi_to_tokens(sample_midi_path)
+
+# Generate seed MIDI continuation
 output_tokens = gmt.generate(model, input_tokens, 600, return_prime=True)
+
+# Dump output back to MIDI
 gmt.tokens_to_midi(output_tokens[0])
 ```
 
