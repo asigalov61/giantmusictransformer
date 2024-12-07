@@ -1,6 +1,8 @@
 # Giant Music Transformer
 ## [Giant Music Transformer](https://github.com/asigalov61/Giant-Music-Transformer) as a PyPi package
 
+![Giant-Music-Transformer-Artwork (10)](https://github.com/user-attachments/assets/e532fed2-4aee-44ba-bd72-e3ad3a2a4e1b)
+
 ***
 
 ## Install
