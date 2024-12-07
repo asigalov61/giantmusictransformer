@@ -27,5 +27,19 @@ choco install fluidsynth
 
 ***
 
+## Quick-start use example
+
+```python
+import giantmusictransformer as gmt
+
+model = gmt.load_model('medium')
+sample_midi_path = gmt.get_sample_midi_files()[6][1]
+input_tokens = gmt.midi_to_tokens(sample_midi_path)
+output_tokens = gmt.generate(model, input_tokens, 600, return_prime=True)
+gmt.tokens_to_midi(output_tokens[0])
+```
+
+***
+
 ### Project Los Angeles
 ### Tegridy Code 2024
