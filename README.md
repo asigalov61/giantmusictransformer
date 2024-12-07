@@ -33,6 +33,7 @@ choco install fluidsynth
 import giantmusictransformer as gmt
 
 # Load desired Giant Music Transformer model
+# There are several to choose from...
 model = gmt.load_model('medium')
 
 # Get sample seed MIDI path
@@ -44,7 +45,7 @@ input_tokens = gmt.midi_to_tokens(sample_midi_path)
 # Generate seed MIDI continuation
 output_tokens = gmt.generate(model, input_tokens, 600, return_prime=True)
 
-# Dump output back to MIDI
+# Save output to MIDI
 gmt.tokens_to_midi(output_tokens[0])
 ```
 
