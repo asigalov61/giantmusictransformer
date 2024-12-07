@@ -10,7 +10,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="giantmusictransformer",
-    version="24.12.11",
+    version="24.12.14",
     description="Fast multi-instrumental music transformer with true full MIDI instruments range, efficient encoding, octo-velocity and outro tokens",
     long_description=long_description,
     long_description_content_type="text/markdown",
