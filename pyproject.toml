@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "giantmusictransformer"
-version = "24.12.2"
+version = "24.12.11"
 description = "Fast multi-instrumental music transformer with true full MIDI instruments range, efficient encoding, octo-velocity and outro tokens"
 authors = [
     {name = "Alex Lev", email = "alexlev61@proton.me"}
@@ -26,6 +26,7 @@ keywords = ["MIDI", "music", "music ai", "music transformer", "artificial instel
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Science/Research",
+    "Topic :: Multimedia :: Sound/Audio :: MIDI",
     "License :: OSI Approved :: Apache Software License",  
     "Operating System :: OS Independent",        
     "Programming Language :: Python :: 3.6",
