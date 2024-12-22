@@ -11,7 +11,7 @@ from . import TMIDIX
 
 #===================================================================================================
 
-def midi_to_tokens(input_midi):
+def midi_to_tokens(input_midi, swapped_tokens=False):
 
     raw_score = TMIDIX.midi2single_track_ms_score(input_midi)
     
@@ -82,8 +82,12 @@ def midi_to_tokens(input_midi):
         
         dur_vel = (8 * dur) + velocity
         pat_ptc = (129 * pat) + ptc
-        
-        melody_chords.extend([delta_time, dur_vel+256, pat_ptc+2304])
+
+        if swapped_tokens:
+            melody_chords.extend([delta_time, pat_ptc+2304, dur_vel+256])
+
+        else:       
+            melody_chords.extend([delta_time, dur_vel+256, pat_ptc+2304])
         
         pe = e
 
@@ -91,7 +95,7 @@ def midi_to_tokens(input_midi):
 
 #===================================================================================================
 
-def tokens_to_midi(tokens, output_midi_name='Giant-Music-Transformer-Composition', return_score=False):
+def tokens_to_midi(tokens, output_midi_name='Giant-Music-Transformer-Composition', return_score=False, swapped_tokens=False):
     
     song = tokens
     song_f = []
@@ -110,51 +114,59 @@ def tokens_to_midi(tokens, output_midi_name='Giant-Music-Transformer-Composition
     
     for ss in song:
     
-      if 0 <= ss < 256:
+        if 0 <= ss < 256:
     
-          time += ss * 16
+            time += ss * 16
     
-      if 256 <= ss < 2304:
+        if 256 <= ss < 2304:
     
-          dur = ((ss-256) // 8) * 16
-          vel = (((ss-256) % 8)+1) * 15
-    
-      if 2304 <= ss < 18945:
-    
-          patch = (ss-2304) // 129
-    
-          if patch < 128:
-    
+            dur = ((ss-256) // 8) * 16
+            vel = (((ss-256) % 8)+1) * 15
+          
+        if swapped_tokens:
+            song_f.append(['note', time, dur, channel, pitch, vel, patch])
+        
+        if 2304 <= ss < 18945:
+        
+            patch = (ss-2304) // 129
+            
+            if patch < 128:
+        
               if patch not in patches:
                 if 0 in channels:
                     cha = channels.index(0)
                     channels[cha] = 1
                 else:
                     cha = 15
-    
+        
                 patches[cha] = patch
                 channel = patches.index(patch)
               else:
                 channel = patches.index(patch)
-    
-          if patch == 128:
-              channel = 9
-    
-          pitch = (ss-2304) % 129
-    
-          song_f.append(['note', time, dur, channel, pitch, vel, patch ])
+        
+            elif patch == 128:
+                channel = 9
+                
+            pitch = (ss-2304) % 129
+          
+            if not swapped_tokens:
+                song_f.append(['note', time, dur, channel, pitch, vel, patch])
     
     patches = [0 if x==-1 else x for x in patches]
 
-    data = TMIDIX.Tegridy_ms_SONG_to_MIDI_Converter(song_f,
-                                                    output_signature = 'Giant Music Transformer',
-                                                    output_file_name = output_midi_name,
-                                                    track_name='Project Los Angeles',
-                                                    list_of_MIDI_patches=patches,
-                                                    verbose=False
-                                                    )
+    detailed_stats = TMIDIX.Tegridy_ms_SONG_to_MIDI_Converter(song_f,
+                                                                output_signature = 'Giant Music Transformer',
+                                                                output_file_name = output_midi_name,
+                                                                track_name='Project Los Angeles',
+                                                                list_of_MIDI_patches=patches,
+                                                                verbose=False
+                                                            )
+    
     if return_score:
         return song_f
+
+    else:
+        return detailed_stats
 
 #===================================================================================================
 # This is the end of midi_processors Python module
