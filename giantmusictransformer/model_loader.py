@@ -25,6 +25,23 @@ from torchsummary import summary
 #===================================================================================================
 
 def load_model(model_size='medium', device='cuda', compile_mode='max-autotune', verbose=False):
+    """
+    Load and initialize Giant Music Transformer model with specified parameters.
+
+    Parameters:
+    model_size (str): The size of the model to load. Options include 'medium', 'medium-swapped', 'large', 'extra-large', 'extra-large-b'. Default and best is 'medium'.
+    device (str): The computing device to use. Options include 'cpu' or 'cuda'. Default is 'cuda'.
+    compile_mode (str): The torch.compile mode for the model. Options include 'default', 'reduce-overhead', 'max-autotune'. Default is 'max-autotune'.
+    verbose (bool): Whether to print detailed information during the loading process. Default is False.
+
+    Returns:
+    model: The initialized Giant Music Transformer model configured with the specified parameters.
+
+    Example:
+    import giantmusictransformer as gmt
+    
+    gmt_model = gmt.load_model(model_size='medium', device='cpu', compile_mode='reduce-overhead', verbose=True)
+    """
 
     if verbose:
         os.environ['HF_HUB_DISABLE_PROGRESS_BARS'] = '0'
