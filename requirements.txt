@@ -1,11 +1,10 @@
 tqdm
-pillow
-numpy
+ipywidgets 
 matplotlib
-scipy
-networkx
+numpy
 scikit-learn
-torch; extra == "cuda"
-einops; extra == "cuda"
-cupy-cuda12x; extra == "cuda"
-torch-summary; extra == "cuda"
+torch
+einops
+torch-summary
+hf-transfer
+huggingface_hub
