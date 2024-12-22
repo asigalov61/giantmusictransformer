@@ -105,6 +105,7 @@ def tokens_to_midi(tokens, output_midi_name='Giant-Music-Transformer-Composition
     vel = 90
     pitch = 0
     channel = 0
+    patch = 0
     
     patches = [-1] * 16
     patches[9] = 9
