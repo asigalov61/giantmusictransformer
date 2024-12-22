@@ -24,7 +24,7 @@ from torchsummary import summary
 
 #===================================================================================================
 
-def load_model(model_size='medium', device='cuda', verbose=False):
+def load_model(model_size='medium', device='cuda', compile_mode='max-autotune', verbose=False):
 
     if verbose:
         os.environ['HF_HUB_DISABLE_PROGRESS_BARS'] = '0'
@@ -76,8 +76,16 @@ def load_model(model_size='medium', device='cuda', verbose=False):
         print('Done!')
         print('=' * 70)
     
+        print('Compiling model...')
+
+    gmt_model = torch.compile(gmt_model, mode=compile_mode)
+
+    if verbose:
+        print('Done!')
+        print('=' * 70)
+    
         print('Activating model...')
-        
+    
     gmt_model.to(device)
     gmt_model.eval()  
 
