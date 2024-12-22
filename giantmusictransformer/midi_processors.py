@@ -124,8 +124,8 @@ def tokens_to_midi(tokens, output_midi_name='Giant-Music-Transformer-Composition
             dur = ((ss-256) // 8) * 16
             vel = (((ss-256) % 8)+1) * 15
           
-        if swapped_tokens:
-            song_f.append(['note', time, dur, channel, pitch, vel, patch])
+            if swapped_tokens:
+                song_f.append(['note', time, dur, channel, pitch, vel, patch])
         
         if 2304 <= ss < 18945:
         
